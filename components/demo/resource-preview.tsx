@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import {
   formMap,
-  verification,
   type Block,
   type Resource,
 } from "@/lib/demo/resources";
@@ -142,11 +141,7 @@ export function ResourcePreview({
           <p className="demo-document-subtitle">{resource.subtitle}</p>
         )}
         <p className="demo-document-note">
-          {c(
-            "Existing curated reference, presented as a preview. Official requirements have not been checked live in this demo. Guides and templates are in English.",
-            "已有精选参考资料的预览。本演示未实时核验官方要求，指南与模板以英文提供。",
-            "Vista previa del material curado existente, sin verificación oficial en vivo. Las guías y plantillas están en inglés.",
-          )}
+          {c("Check the official sources for current requirements. Guides and templates are in English.", "请以官方来源的最新要求为准。指南和模板以英文提供。", "Consulta los requisitos actuales en las fuentes oficiales. Las guías y plantillas están en inglés.")}
         </p>
         {resource.kind === "map" ? (
           <>
@@ -157,15 +152,10 @@ export function ResourcePreview({
                 "Referencia de los campos del formulario oficial de cinco páginas. Continúa en la conversación de la acción para prepararlo.",
               )}
             </p>
-            <span className="demo-badge">
-              {c("Map reviewed", "映射已审核", "Mapa revisado")} ·{" "}
-              {verification.reviewedAt.slice(0, 10)}
-            </span>
             <div className="demo-map-fields">
               {formMap.questions.map((question) => (
                 <div key={question.id}>
                   <strong>{question.label}</strong>
-                  <span>{question.type}</span>
                 </div>
               ))}
             </div>
@@ -176,31 +166,10 @@ export function ResourcePreview({
           ))
         )}
       </article>
-      <footer>
-        <span>
-          {resource.kind === "map" ? c("Prepare this form in the action conversation", "在行动对话中准备表格", "Preparar en la conversación") : c(
-            "Preview · Editing and export are not connected yet",
-            "预览 · 编辑与导出尚未接入",
-            "Vista previa · Edición y exportación aún no conectadas",
-          )}
-        </span>
-        {(resource.kind === "template") && (
-          <button className="demo-secondary" disabled title={c("Document editing is not connected yet", "文档编辑尚未接入", "El editor aún no está conectado")}>
-            {c("Edit document", "编辑文档", "Editar documento")}
-          </button>
-        )}
-        {resource.kind === "map" && <button className="demo-secondary" onClick={onOpenForm}>{c("Open action", "打开行动", "Abrir acción")}</button>}
-        {resource.blocks && (
-          <button className="demo-secondary" disabled title={c("Document export is not connected yet", "文档导出尚未接入", "La exportación aún no está conectada")}>
-            {c(
-              "Download",
-              "下载",
-              "Descargar",
-            )}
-            <DemoIcon name="file" />
-          </button>
-        )}
-      </footer>
+      {resource.kind === "map" && <footer>
+        <span>{c("Prepare this form in the action conversation", "在行动对话中准备表格", "Preparar en la conversación")}</span>
+        <button className="demo-secondary" onClick={onOpenForm}>{c("Open action", "打开行动", "Abrir acción")}</button>
+      </footer>}
     </dialog>
   );
 }

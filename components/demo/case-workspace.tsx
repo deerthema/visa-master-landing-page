@@ -7,7 +7,6 @@ import {
   actions,
   actionResources,
   actionText,
-  provenance,
   resources,
   type Resource,
 } from "@/lib/demo/resources";
@@ -341,8 +340,8 @@ export function CaseWorkspace({
                 </h2>
                 <p className="demo-workspace-lead">
                   {c(
-                    "The existing route’s guides, blank templates, and official source pages. Open any resource to take a closer look.",
-                    "已有路线中的指南、空白模板及官方来源页面。打开任一资源即可查看详情。",
+                    "Guides, blank templates, and official source pages for your application. Open any resource to take a closer look.",
+                    "申请所需的指南、空白模板及官方来源页面。打开任一资源即可查看详情。",
                     "Guías, plantillas en blanco y páginas oficiales de la ruta. Abre un recurso para verlo.",
                   )}
                 </p>
@@ -410,23 +409,7 @@ export function CaseWorkspace({
                 </div>
               </>
             )}
-            <footer className="demo-workspace-footer">
-              <span>
-                {c(
-                  "Curated route preview · No live verification",
-                  "精选路线预览 · 未实时核验",
-                  "Vista previa curada · Sin verificación en vivo",
-                )}
-              </span>
-              <a
-                href={`https://github.com/${provenance.repository}/tree/${provenance.revision}/agent/skills/research-core/references/routes/spain-schengen-tourism-chengdu-employed-adult`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {c("Route provenance", "路线来源", "Procedencia de la ruta")}
-                <DemoIcon name="external" />
-              </a>
-            </footer>
+
           </div>
         </div>
       )}

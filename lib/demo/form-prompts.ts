@@ -15,6 +15,8 @@ export function formPrompt(
     passport ? "pasaporte" : "documento de viaje",
   );
   const friendly: Record<string, string> = {
+    "applicant.birth.date": c("What is your date of birth?", "你的出生日期是哪一天？", "¿Cuál es tu fecha de nacimiento?"),
+    "eu_family_member.birth_date": c("What is your EU, EEA or Swiss family member’s date of birth?", "你的欧盟、欧洲经济区或瑞士籍家庭成员的出生日期是哪一天？", "¿Cuál es la fecha de nacimiento de tu familiar ciudadano de la UE, del EEE o de Suiza?"),
     "host.name": c("What is the name of your hotel or accommodation, or the person hosting you?", "你入住的酒店或其他住宿叫什么名字？如果住在他人家中，请填写接待人的姓名。", "¿Cómo se llama tu alojamiento o la persona que te hospeda?"),
     "host.address": c("What is the address of that hotel, accommodation or host?", "这家酒店、住宿或接待人的地址是什么？", "¿Cuál es la dirección de ese alojamiento o anfitrión?"),
     "host.email": c("What is the email address of that hotel, accommodation or host?", "这家酒店、住宿或接待人的电子邮箱是什么？", "¿Cuál es el correo electrónico de ese alojamiento o anfitrión?"),

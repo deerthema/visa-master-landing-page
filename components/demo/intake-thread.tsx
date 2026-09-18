@@ -134,13 +134,13 @@ export function IntakeThread({
             )}
             {unsupported && !editing && (
               <div className="demo-question" key={`demo-question-${count}-${locale}`}><ResponseReveal title={c(
-                    "This preview isn’t a match yet.",
-                    "当前演示路线与你的情况不匹配。",
-                    "Esta vista previa no encaja todavía.",
+                    "This application flow doesn’t cover your situation.",
+                    "当前申请流程不适用于你的情况。",
+                    "Este proceso no cubre tu situación.",
                   )} text={c(
-                    "This answer needs a route or additional checks outside this demo. It does not mean you cannot apply for a visa.",
-                    "这个回答需要此演示之外的路线或额外核验，不代表你不能申请签证。",
-                    "Esta respuesta requiere otra ruta o comprobaciones fuera de la demo. No significa que no puedas solicitar un visado.",
+                    "Your situation needs a different application route or further checks. This does not mean you cannot apply for a visa. If an answer is incorrect, you can revise it below.",
+                    "你的情况需要其他申请流程或进一步核验，不代表你不能申请签证。如果回答有误，可以在下方修改。",
+                    "Tu situación requiere otra vía de solicitud o comprobaciones adicionales. No significa que no puedas solicitar un visado. Si una respuesta es incorrecta, puedes corregirla abajo.",
                   )} locale={locale} animate={animate} headingRef={activeHeadingRef} onBusyChange={setGenerating}>
                 <div className="demo-options">
                   <button onClick={() => edit(unsupported)}>
@@ -150,27 +150,6 @@ export function IntakeThread({
                       "Cambiar mi respuesta",
                     )}
                     <DemoIcon name="back" />
-                  </button>
-                  <button
-                    onClick={() => {
-                      setAnimate(true);
-                      setGenerating(true);
-                      onChange({
-                        ...state,
-                        sample: true,
-                        answers: Object.fromEntries(
-                          fieldIds.map((id) => [id, "supported"]),
-                        ),
-                        view: "thread",
-                      });
-                    }}
-                  >
-                    {c(
-                      "Explore a sample applicant",
-                      "体验示例申请人",
-                      "Explorar un solicitante de ejemplo",
-                    )}
-                    <DemoIcon name="arrow" />
                   </button>
                 </div>
                 </ResponseReveal>

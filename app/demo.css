@@ -490,25 +490,6 @@
   line-height: 1.8;
   margin: 0 0 18px;
 }
-.demo-workspace-footer {
-  margin-top: 34px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  color: var(--demo-muted);
-  font-size: 9px;
-  line-height: 1.6;
-}
-.demo-workspace-footer a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: inherit;
-  text-decoration: none;
-}
 .demo-detail-section {
   margin-top: 30px;
 }
@@ -704,9 +685,6 @@
 .demo-map-fields strong {
   font-weight: 500;
 }
-.demo-map-fields span {
-  color: var(--demo-muted);
-}
 @media (hover: hover) and (pointer: fine) {
   .demo-options button:hover,
   .demo-resource-card:hover,
@@ -827,11 +805,6 @@
   }
   .demo-continue-card {
     padding: 21px;
-  }
-  .demo-workspace-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
   }
   .demo-resource-dialog {
     width: calc(100vw - 16px);
@@ -1472,10 +1445,8 @@ body:has(.site.stage-workspace) {
   .demo-workspace-lead + .demo-section-heading { margin-top: 28px; }
 }
 
-.demo-automation-entry { width: min(768px, calc(100% - 48px)); margin: 0 auto 20px; }
 .demo-resource-dialog footer { flex-wrap: wrap; gap: 12px; }
 .demo-resource-dialog button:disabled { opacity: .45; cursor: not-allowed; }
-.demo-feature-availability { color: var(--muted); font-size: 12px; margin: 8px 0 0; }
 
 /* Fixed profile footer with a soft scroll-edge fade above its divider. */
 .demo-sidebar { --sidebar-surface: color-mix(in srgb, var(--bg) 60%, var(--paper)); background: var(--sidebar-surface); }

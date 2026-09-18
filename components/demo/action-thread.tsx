@@ -139,9 +139,9 @@ export function ActionThread({
         <>
           <p>
             {c(
-              "In this demo, I can explain this step, show its documents, and walk through its requirements. I can’t check your personal documents or take action outside this preview.",
-              "在此演示中，我可以解释这一步、展示文件并梳理要求，但不能核验你的个人材料或执行外部操作。",
-              "En esta demo puedo explicar este paso y mostrar sus documentos y requisitos. No puedo verificar documentos personales ni realizar acciones externas.",
+              "For this step, choose the requirements, supporting documents, or completion guidance below.",
+              "你可以在下方查看这一步的材料要求、相关文件或完成指引。",
+              "Elige abajo los requisitos, los documentos o las indicaciones para completar este paso.",
             )}
           </p>
           <div className="action-thread-suggestions">
@@ -230,11 +230,6 @@ export function ActionThread({
               </li>
             ))}
           </ol>
-          {(action.id === "book-bls-appointment" || action.id === "track-status") && (
-            <div className="demo-automation-entry"><button className="demo-secondary" disabled aria-describedby="automation-availability">
-              <DemoIcon name="globe" />{c("Use browser automation", "使用浏览器自动化", "Automatización del navegador")}
-            </button><p id="automation-availability" className="demo-feature-availability">{c("Browser automation is not connected yet.", "浏览器自动化尚未接入。", "La automatización aún no está conectada.")}</p></div>
-          )}
           <ThreadComposer id={`action-message-${action.id}`} locale={locale}
             value={thread.draft} onChange={draft => onThreadChange({ ...thread, draft })}
             onSubmit={submit} inputRef={input}
@@ -279,9 +274,9 @@ export function ActionThread({
               <summary>{c("Sources", "来源", "Fuentes")}</summary>
               <p>
                 {c(
-                  "Curated references; not checked live in this demo.",
-                  "已整理的参考来源；本演示未实时核验。",
-                  "Referencias curadas; sin verificación en vivo.",
+                  "Check the official sources for current requirements.",
+                  "请以官方来源的最新要求为准。",
+                  "Consulta los requisitos actuales en las fuentes oficiales.",
                 )}
               </p>
               {actionSources(action).map((source) => (

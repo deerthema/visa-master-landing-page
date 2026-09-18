@@ -1,6 +1,8 @@
 "use client";
 import { formFollowupIntent } from "@/lib/demo/action-thread";
 
+import { FormDateCalendar } from "./form-date-calendar";
+import { formatFormDate } from "@/lib/demo/form-date";
 import { formPrompt } from "@/lib/demo/form-prompts";
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { local, type DemoState, type Locale } from "@/lib/demo/intake";
@@ -354,13 +356,13 @@ export function FormActionThread({
                       aria-label={`${c("Edit answer", "修改答案", "Editar respuesta")}: ${turn.prompt}`}
                       onClick={() => edit(turn.questionId)}
                     >
-                      {turn.text}
+                      {formMap.questions.some(q => q.id === turn.questionId && q.type === "date") ? formatFormDate(turn.text, locale) : turn.text}
                       <span aria-hidden="true">
                         {c("Edit", "修改", "Editar")}
                       </span>
                     </button>
                   ) : (
-                    <p>{turn.text}</p>
+                    <p>{formMap.questions.some(q => q.id === turn.questionId && q.type === "date") ? formatFormDate(turn.text, locale) : turn.text}</p>
                   )}
                 </li>
               </Fragment>
@@ -437,22 +439,8 @@ export function FormActionThread({
                           </button>
                         </>
                       )}
-                      {q.type === "date" && (
-                        <label className="form-thread-date">
-                          {c(
-                            "Choose a date or type YYYY-MM-DD below.",
-                            "请选择日期，或在下方输入 YYYY-MM-DD。",
-                            "Elige una fecha o escribe AAAA-MM-DD.",
-                          )}
-                          <input
-                            type="date"
-                            value={
-                              /^\d{4}-\d{2}-\d{2}$/.test(draft) ? draft : ""
-                            }
-                            onChange={(e) => setDraft(e.target.value)}
-                          />
-                        </label>
-                      )}
+                      {q.type === "date" && <FormDateCalendar key={q.id} value={draft} locale={locale} label={prompt(q)}
+                        disabled={busy} error={error} onChange={value => { setError(""); setDraft(value); }} onSubmit={submit} />}
                       {!q.required && (
                         <button
                           className="form-answer-edit"
@@ -529,9 +517,9 @@ export function FormActionThread({
                                 "Abre Archivos para revisar las cinco páginas y descargar el borrador actualizado. Puedes seguir corrigiendo respuestas.",
                               )
                             : c(
-                                "This demo can help you revise answers or review and download the PDF. An agent isn’t connected for other questions yet. What would you like to change?",
-                                "此演示可以继续修改答案、检查和下载 PDF。其他问题尚未接入智能助手。你想修改哪项内容？",
-                                "Esta demo permite corregir respuestas y revisar o descargar el PDF. Aún no hay un agente para otras preguntas.",
+                                "To change an answer, select it in this conversation. To check the completed form, choose Review PDF; you can download it from Artifacts.",
+                                "点击对话中的答案即可修改。选择“检查 PDF”查看填写后的表格，也可以在“材料”中下载。",
+                                "Selecciona una respuesta en esta conversación para corregirla. Elige Revisar PDF para comprobar el formulario y descárgalo desde Documentos.",
                               )}
                     </p>
                     {(message.intent === "requirements" ||
@@ -567,7 +555,7 @@ export function FormActionThread({
               </li>
             ))}
           </ol>
-          <ThreadComposer
+          {q?.type !== "date" && <ThreadComposer
             id="official-form-answer"
             locale={locale}
             value={draft}
@@ -590,7 +578,7 @@ export function FormActionThread({
             submitDisabled={!!q && busy}
             jumpVisible={jumpVisible}
             onJump={jumpToLatest}
-          />
+          />}
         </div>
       </section>
       {artifacts && (

@@ -41,9 +41,9 @@ export const questions = {
       "¿En qué país pasarás la mayor parte del viaje?",
     ),
     detail: words(
-      "For tourism, apply through your longest-stay country; if stays are equal, use the first Schengen country entered. This demo covers Spain.",
-      "旅游行程按停留时间最长的国家申请；时间相同则按首次入境的申根国家申请。此演示支持西班牙。",
-      "Para turismo, solicita al país de estancia más larga; en caso de empate, al primero de entrada a Schengen. Esta demo cubre España.",
+      "For tourism, apply through your longest-stay country; if stays are equal, use the first Schengen country entered. This application flow supports Spain.",
+      "旅游行程按停留时间最长的国家申请；时间相同则按首次入境的申根国家申请。当前申请流程支持西班牙。",
+      "Para turismo, solicita al país de estancia más larga; en caso de empate, al primero de entrada a Schengen. Este proceso admite solicitudes para España.",
     ),
     options: [
       words("Spain", "西班牙", "España"),
@@ -58,9 +58,9 @@ export const questions = {
       "¿Dónde está registrado tu hukou?",
     ),
     detail: words(
-      "Use your household registration book. The real district covers Sichuan, Yunnan, Guizhou and Chongqing; this demo is limited to Chengdu hukou.",
-      "请以户口本登记地为准。实际成都领区包含四川、云南、贵州、重庆；此演示仅覆盖成都户籍。",
-      "Usa tu registro familiar. La demarcación incluye Sichuan, Yunnan, Guizhou y Chongqing; esta demo solo cubre hukou de Chengdú.",
+      "Use your household registration book. The consular district covers Sichuan, Yunnan, Guizhou and Chongqing; this application flow supports Chengdu hukou.",
+      "请以户口本登记地为准。成都领区包含四川、云南、贵州、重庆；当前申请流程支持成都户籍。",
+      "Usa tu registro familiar. La demarcación incluye Sichuan, Yunnan, Guizhou y Chongqing; este proceso admite hukou de Chengdú.",
     ),
     options: [
       words("Chengdu, China", "中国成都", "Chengdú, China"),
@@ -70,13 +70,13 @@ export const questions = {
   filingResidence: {
     label: words("Country of residence", "常住国家", "País de residencia"),
     prompt: words("Do you currently live in mainland China?", "你目前常住中国大陆吗？", "¿Resides actualmente en China continental?"),
-    detail: words("Hukou alone does not establish where you should apply if you live abroad. This demo covers applicants living in mainland China.", "如果常住海外，不能仅凭成都户口判断递签地点。此演示支持常住中国大陆的申请人。", "El hukou no basta para determinar dónde solicitar si resides en el extranjero. Esta demo cubre residentes en China continental."),
+    detail: words("Hukou alone does not establish where you should apply if you live abroad. This application flow supports applicants living in mainland China.", "如果常住海外，不能仅凭成都户口判断递签地点。当前申请流程支持常住中国大陆的申请人。", "El hukou no basta para determinar dónde solicitar si resides en el extranjero. Este proceso admite residentes en China continental."),
     options: [words("Yes, I live in mainland China", "是，常住中国大陆", "Sí, resido en China continental"), words("I live abroad or need to check", "常住海外，或需要确认", "Resido fuera o necesito confirmarlo")],
   },
   priorStay: {
     label: words("Recent Schengen stays", "近期申根停留", "Estancias recientes en Schengen"),
     prompt: words("Any Schengen stays in the 180 days before this trip?", "本次入境前 180 天内，你在申根区停留过吗？", "¿Has estado en Schengen en los 180 días anteriores a este viaje?"),
-    detail: words("The limit is 90 days in any rolling 180-day period, including earlier visits. Previous stays need a date-by-date calculation outside this demo.", "限制是任意连续 180 天内累计最多 90 天，包含之前的停留。有既往停留时，需要按出入境日期另行计算，此演示暂不处理。", "El límite es de 90 días en cualquier período de 180 días, incluidas visitas anteriores. Las estancias previas requieren un cálculo de fechas fuera de esta demo."),
+    detail: words("The limit is 90 days in any rolling 180-day period, including earlier visits. If you have previous stays, check your entry and exit dates to calculate the days remaining.", "限制是任意连续 180 天内累计最多 90 天，包含之前的停留。有既往停留时，请按出入境日期核算剩余可停留天数。", "El límite es de 90 días en cualquier período de 180 días, incluidas visitas anteriores. Si tienes estancias previas, revisa las fechas de entrada y salida para calcular los días restantes."),
     options: [words("No Schengen stays in that period", "这段时间没有申根停留", "Ninguna estancia en ese período"), words("Yes, or I am not sure", "有，或不确定", "Sí, o no estoy seguro")],
   },
   funding: {
@@ -93,9 +93,9 @@ export const questions = {
       "¿Qué te lleva a España?",
     ),
     detail: words(
-      "This demo covers tourism. We’ll confirm the length of your stay separately.",
-      "此演示支持旅游申请，停留天数会单独确认。",
-      "Esta demo cubre turismo. Confirmaremos la duración por separado.",
+      "Choose the main purpose of your visit. We’ll confirm the length of your stay separately.",
+      "请选择此次出行的主要目的，停留天数会单独确认。",
+      "Elige el motivo principal de tu visita. Confirmaremos la duración por separado.",
     ),
     options: [
       words(
@@ -191,9 +191,9 @@ export const questions = {
       "¿Para quién preparamos la solicitud?",
     ),
     detail: words(
-      "The demo prepares one employed adult’s application. Family plans will come later.",
-      "此演示支持一位在职成年人的申请，家庭申请将后续开放。",
-      "La demo prepara una solicitud de un adulto empleado. Las familias llegarán más adelante.",
+      "Prepare one application at a time. This flow supports an employed adult applying individually.",
+      "每次准备一份申请。当前流程支持在职成年人单独申请。",
+      "Prepara una solicitud a la vez. Este proceso admite a un adulto empleado que solicita individualmente.",
     ),
     options: [
       words(

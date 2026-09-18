@@ -159,3 +159,13 @@ test('tourism asks accommodation details directly even after an old No answer', 
  const exempt=formQuestions('en',{...values,'applicant.eu_family_qualified':true});
  assert.ok(!exempt.some(q=>q.id==='host.name'));
 });
+
+test('conversation dates are readable while PDF formatting stays unchanged', async () => {
+ const { formatFormDate } = await import('../lib/demo/form-date.ts');
+ assert.equal(formatFormDate('1998-12-29','cn'),'1998年12月29日');
+ assert.equal(formatFormDate('1998-12-29','en'),'29 Dec 1998');
+ assert.match(formatFormDate('1998-12-29','es'),/29.*dic.*1998/);
+ assert.equal(formatFormDate('2025-02-29','en'),'2025-02-29');
+ assert.equal(formatFormDate('Not applicable','en'),'Not applicable');
+ assert.equal(displayValue(formMap.questions.find(q=>q.id==='applicant.birth.date'),'1998-12-29'),'29-12-1998');
+});

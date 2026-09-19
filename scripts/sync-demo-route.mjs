@@ -26,6 +26,9 @@ const provenance = {
   revision: execFileSync("git", ["-C", source, "rev-parse", "HEAD"], {
     encoding: "utf8",
   }).trim(),
+  sourceFilesModified: execFileSync("git", ["-C", source, "status", "--porcelain", "--", ...Object.values(files)], {
+    encoding: "utf8",
+  }).trim().length > 0,
   liveVerified: false,
   files: {},
 };

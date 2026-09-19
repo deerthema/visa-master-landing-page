@@ -2,6 +2,7 @@
   "schemaVersion": "visa-master.route.v1",
   "id": "spain-schengen-tourism-chengdu-employed-adult",
   "title": "Spain Schengen tourism from Chengdu — employed adult",
+  "filingJurisdiction": "Chengdu consular district, China",
   "match": {
     "destination": ["Spain", "西班牙"],
     "visaFamily": [
@@ -10,7 +11,8 @@
       "申根短期签证"
     ],
     "purpose": ["tourism", "旅游"],
-    "legalResidence": [
+    "legalResidenceCountry": ["Mainland China", "中国大陆"],
+    "hukouLocation": [
       "Chengdu, China",
       "Chengdu, Sichuan, China",
       "成都",

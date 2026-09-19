@@ -3,10 +3,14 @@
   "claims": [
     {
       "id": "jurisdiction",
-      "question": "Does the Spanish Consulate General in Chengdu remain competent for Sichuan?",
-      "value": "Sichuan is within the consular district of the Consulate General of Spain in Chengdu.",
+      "question": "Do current sources support hukou-based filing in the Chengdu district for an applicant legally resident in mainland China?",
+      "value": "The Chengdu consular district includes Sichuan, Chongqing, Yunnan, and Guizhou. BLS directs applicants by hukou location; the general Schengen rule is to apply in the country of legal residence. This curated route covers only confirmed Chengdu hukou with current mainland-China legal residence; other hukou locations, overseas residence, and residence-permit exceptions require separate jurisdiction verification.",
       "critical": true,
-      "checks": [{ "source": "consulate-jurisdiction", "all": ["Sichuan", "Chengdu"] }]
+      "checks": [
+        { "source": "consulate-jurisdiction", "all": ["Sichuan", "Chengdu"] },
+        { "source": "bls-faq-zh", "all": ["签证申请人须按照户口所在地的签证申请中心提交签证申请", "成都管辖区包括", "云南", "贵州", "四川", "重庆"] },
+        { "source": "ec-applying", "all": ["country where you are legally resident"] }
+      ]
     },
     {
       "id": "provider",

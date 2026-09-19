@@ -61,6 +61,12 @@
       "expect": "html"
     },
     {
+      "id": "bls-faq-zh",
+      "url": "https://web.blscn.cn/chengdu/chinese/faq.php",
+      "filename": "bls-faq-zh.html",
+      "expect": "html"
+    },
+    {
       "id": "ec-applying",
       "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
       "filename": "ec-applying.html",

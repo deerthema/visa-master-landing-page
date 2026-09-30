@@ -47,7 +47,7 @@ export function LegalPage({
             <span className="legal-eyebrow">{eyebrow}</span>
             <h1>{title}</h1>
             <p>{summary}</p>
-            <time dateTime="2026-08-24">Effective August 24, 2026</time>
+            <time dateTime="2026-09-30">Effective September 30, 2026</time>
           </header>
           {children}
         </article>

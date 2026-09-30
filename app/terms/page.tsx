@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — Visa Master",
+  title: "Terms of Service — Visa Master",
   description: "The terms that apply when you access or use Visa Master.",
 };
 
@@ -13,36 +13,38 @@ const sections = [
   { id: "important", label: "Important visa-service limits" },
   { id: "beta", label: "Private beta" },
   { id: "accounts", label: "Accounts" },
-  { id: "responsibilities", label: "Your responsibilities" },
+  { id: "responsibilities", label: "Your review and authorization" },
   { id: "content", label: "Your content" },
   { id: "ai", label: "AI-assisted output" },
   { id: "use", label: "Acceptable use" },
   { id: "third-party", label: "Third-party services" },
   { id: "ownership", label: "Ownership and feedback" },
-  { id: "fees", label: "Fees" },
+  { id: "fees", label: "Fees, cancellations, and refunds" },
   { id: "ending", label: "Suspension and termination" },
   { id: "disclaimers", label: "Disclaimers and liability" },
+  { id: "disputes", label: "Complaints and disputes" },
   { id: "changes", label: "Changes and contact" },
 ];
 
 export default function TermsPage() {
   return (
     <LegalPage
-      eyebrow="TERMS OF USE"
-      title="Terms of Use"
-      summary="These Terms govern access to and use of the Visa Master website, private beta, accounts, and workspace. By using Visa Master, you agree to these Terms."
+      eyebrow="TERMS OF SERVICE"
+      title="Terms of Service"
+      summary="These Terms govern the Visa Master website, private beta, accounts, and demo Workspace. They explain the service’s scope, your control over application materials, and the responsibilities that apply when you use it."
       sections={sections}
     >
       <section id="agreement">
         <h2>1. Agreement and eligibility</h2>
-        <p>By accessing or using Visa Master, you agree to these Terms and our <a href="/privacy">Privacy Policy</a>. If you do not agree, do not use the service. “Visa Master,” “we,” and “us” mean the team operating Visa Master, a Lüya product.</p>
+        <p>By accessing or using Visa Master, you agree to these Terms. Our <a href="/privacy">Privacy Policy</a> explains how information is handled. If you do not agree to these Terms, do not use the service. “Visa Master,” “we,” and “us” mean the team operating Visa Master, a Lüya product.</p>
         <p>You must be at least 18 years old and legally able to enter into this agreement. If a future feature lets you prepare a visa Case for a minor or another person, you must have authority to act for them and provide their information.</p>
       </section>
 
       <section id="service">
         <h2>2. What Visa Master does</h2>
-        <p>Visa Master is a technology service designed to make do-it-yourself visa preparation easier, with an initial focus on travel, study, business, work, and other temporary or non-immigrant visas. Its planned workspace guides users through current official requirements, helps organize evidence, and prepares consistent draft documents and an application pack while the user remains in control.</p>
-        <p>The current private beta is more limited. It includes a public product demonstration, waitlist and invitation access, authentication, display-name onboarding, and an early workspace. Example routes, requirements, files, completion states, and downloads shown on the landing page are demonstrations, not completed visa work or live advice.</p>
+        <p>Visa Master is a personal visa-preparation product designed to research requirements, organize evidence, and prepare application materials around the applicant’s plans. A Case is a visa-preparation record, and the Workspace is where an applicant enters, reviews, and manages that work. Available features and supported routes are described in the service.</p>
+        <p>The current private beta includes a route demonstration, waitlist and invitations, authentication, display-name onboarding, and a demo Workspace. It uses a bundled route snapshot and predefined replies. You can enter application-form answers and generate a draft PDF in your browser; the demo does not perform live requirements research, upload supporting files, run passport recognition, or produce a complete application pack.</p>
+        <p>Example routes, progress indicators, and draft downloads are not proof that an authority has reviewed or accepted anything. The demo does not make payments, book appointments, submit applications, or act as your representative before an authority.</p>
       </section>
 
       <section id="important">
@@ -55,7 +57,8 @@ export default function TermsPage() {
       <section id="beta">
         <h2>4. Private beta</h2>
         <p>Access may be limited by waitlist, invite phrase, geography, capacity, or feature availability. An invitation is personal to its recipient unless we say otherwise. You may not sell, publish, automate guesses for, or misuse invite phrases.</p>
-        <p>Beta features may be incomplete, change materially, contain errors, or be withdrawn. We may reset test data or limit access when reasonably necessary, but we will not intentionally present the demonstration as a completed application service.</p>
+        <p>Beta features may be incomplete, change materially, contain errors, or be withdrawn. We may reset test data or limit access when reasonably necessary. Keep your own copies of important information and use official channels for time-sensitive requirements.</p>
+        <p>Demo answers are stored in the current browser-tab session rather than a server-backed Case. Signing out does not erase those answers. Browser restoration may retain them, and clearing browser data may permanently remove them. Downloaded PDFs remain on your device until you delete them. The <a href="/privacy#local-data">Privacy Policy</a> explains these controls.</p>
       </section>
 
       <section id="accounts">
@@ -65,21 +68,24 @@ export default function TermsPage() {
       </section>
 
       <section id="responsibilities">
-        <h2>6. Your responsibilities</h2>
+        <h2>6. Your review and authorization</h2>
         <p>You remain responsible for your application and decisions. This includes choosing the correct visa route, checking official requirements and deadlines, reviewing every answer and generated document, providing authentic and complete evidence, paying applicable fees, attending appointments, and deciding what to submit.</p>
         <p>You must correct mistakes you notice and must not ask Visa Master to create false statements, altered evidence, or misleading applications. We will not submit an application, make a payment, accept a declaration, or send information to an authority without a clear feature and your authorization.</p>
+        <p>Creating an account, entering answers, or downloading a draft does not authorize us to act externally for you. If an external-action feature becomes available, it must identify the action and recipient and request your authorization before it proceeds. Keep credentials, verification codes, signatures, and payment approval within the designated sign-in or official confirmation flow; do not put them in demo messages or support emails.</p>
+        <p>A prepared form, a completed progress indicator, or an attempted action is not a submission or booking receipt. Confirm the result with the responsible provider and retain its acknowledgement before relying on it.</p>
       </section>
 
       <section id="content">
         <h2>7. Your content</h2>
-        <p>You keep ownership of the information, documents, and other material you provide. You give Visa Master a limited permission to host, copy, format, analyze, and otherwise process that material only as needed to provide, secure, support, and improve the features you request, consistent with the Privacy Policy.</p>
+        <p>You keep ownership of the information, documents, and other material you provide. You give Visa Master permission to process that material only as needed to operate the features you request, deliver their output, secure the service, respond to your support requests, and meet legal obligations, as described in the Privacy Policy. This permission does not transfer ownership or authorize advertising use or model training.</p>
         <p>You represent that you have the right to provide the material, including information about another applicant. Do not upload malware, unlawfully obtained material, or information you are not authorized to use.</p>
       </section>
 
       <section id="ai">
         <h2>8. AI-assisted output</h2>
         <p>Some future features may use automated or AI-assisted systems to research, classify, compare, summarize, or draft. Output may be incomplete, outdated, or wrong, even when it sounds confident. Treat it as a working draft and check it against official sources and your own records.</p>
-        <p>AI output is not a decision by a visa-issuing authority and should not be treated as legal advice. You are responsible for the final review and use of any generated material. The current landing-page demonstration does not process visa Case documents or generate a real application pack.</p>
+        <p>Check any extracted or suggested name, passport number, date, nationality, translation, and other answer against the original evidence before using it. Successful text extraction or a format check does not authenticate a document or establish eligibility. Any future AI output remains subject to your review; a separate professional review is included only if the feature expressly says so.</p>
+        <p>The current demo’s form checks and PDF generation run in the browser without an AI model. A generated draft still needs your review, any required signature and photograph, and confirmation that the official form and filing requirements remain current.</p>
       </section>
 
       <section id="use">
@@ -100,13 +106,16 @@ export default function TermsPage() {
       </section>
 
       <section id="fees">
-        <h2>12. Fees</h2>
+        <h2>12. Fees, cancellations, and refunds</h2>
         <p>The current private beta does not charge for the demonstrated landing-page flow. If paid features are introduced, we will show the price, currency, billing terms, and applicable refund or cancellation rules before you agree to a charge. Government, appointment, translation, courier, or other third-party fees are separate unless expressly stated.</p>
+        <p>Any future paid offer must identify the preparation work included, applicable taxes or additional charges, and when work begins. A service fee would pay for the stated work, not a favorable visa decision. Visa refusal alone would not establish that the preparation service was defective, but it would not remove any refund or remedy available under the offer or applicable law.</p>
+        <p>Third-party fees follow the relevant provider’s rules. Later price changes will not alter an already agreed purchase without your agreement. Nothing in these Terms makes every payment non-refundable or removes mandatory cancellation, refund, or consumer rights.</p>
       </section>
 
       <section id="ending">
         <h2>13. Suspension and termination</h2>
         <p>You may stop using Visa Master at any time and may request account deletion as described in the Privacy Policy. We may limit, suspend, or terminate access if you breach these Terms, create risk or legal exposure, threaten the service or other people, or if operating a feature is no longer practical. Where appropriate, we will provide notice and a reasonable opportunity to address the issue.</p>
+        <p>Contact us if you believe a restriction was applied in error. Account closure does not delete local drafts or downloaded files, cancel something you arranged with a third party, or remove rights concerning work already paid for. Information we hold is handled under the <a href="/privacy#retention">Privacy Policy’s retention provisions</a>.</p>
         <p>Sections that by their nature should continue—such as ownership, disclaimers, liability limits, and obligations concerning prior use—survive termination.</p>
       </section>
 
@@ -116,9 +125,16 @@ export default function TermsPage() {
         <p>To the extent permitted by law, Visa Master and the people who operate it will not be liable for indirect, incidental, special, consequential, or punitive losses, or for lost profits, data, opportunities, travel, or visa and entry outcomes arising from use of the service. Nothing in these Terms excludes liability that cannot lawfully be excluded or limits mandatory consumer rights.</p>
       </section>
 
+      <section id="disputes">
+        <h2>15. Complaints and disputes</h2>
+        <p>If something goes wrong, email <a href="mailto:askluya@gmail.com">askluya@gmail.com</a> with a description of the issue and the resolution you are seeking. We will consider the complaint and seek a good-faith resolution. Do not include sensitive application documents unless we arrange an appropriate way to receive them.</p>
+        <p>This contact process does not require you to delay an urgent claim, miss a legal deadline, waive a remedy, or give up access to a court or regulator. Mandatory rights and any jurisdiction available to you under applicable law remain unaffected. These Terms do not impose arbitration or a particular exclusive court venue.</p>
+      </section>
+
       <section id="changes">
-        <h2>15. Changes and contact</h2>
-        <p>We may update these Terms as the beta and service develop. If a change is material, we will provide reasonable notice through the service, by email, or both. Changes apply from the stated effective date; if you do not agree, you should stop using the service.</p>
+        <h2>16. Changes and contact</h2>
+        <p>We may update these Terms as the beta and service develop. For material changes, we will provide reasonable advance notice through the service, by email, or both, unless an urgent legal or security reason requires an earlier change. We will seek agreement where required by law. Revisions will not retrospectively remove rights that have already arisen; if you do not agree to the revised Terms, you may stop using the service.</p>
+        <p>If a provision is unenforceable, the remaining provisions continue to apply to the extent allowed by law. A delay in enforcing a provision does not by itself waive it.</p>
         <p>Questions about these Terms can be sent to <a href="mailto:askluya@gmail.com">askluya@gmail.com</a>.</p>
       </section>
     </LegalPage>
